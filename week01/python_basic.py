@@ -338,3 +338,7 @@ print(any([4, -2, 0.0, 4]))
 # 아스키코드 값에 대한 문자 출력
 print(char(97))
 print(char(48))
+
+# 문자에 대한 아스키코드 값 출력
+print(ord('a'))
+print(ord('0'))
