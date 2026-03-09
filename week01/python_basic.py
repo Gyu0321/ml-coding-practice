@@ -63,3 +63,29 @@ print(c)
 print(a.upper())
 print(a.lower())
 
+# 공백 제거
+d = "           py          "
+print(d.lstrip())
+print(d.rstrip())
+print(d.strip())
+
+# 문자열 수정 (불가능)
+a = "Pithon"
+# a[1] = 'y'    # 오류 발생
+
+#문자열 바꾸기
+a = "Python is difficult."
+print(a.replace("difficult", "funny"))
+print(a)
+
+#문자열 나구기
+print(a.split())
+
+b = "a, b, c, d"
+print(b)
+print(b.split(','))
+
+#리스트 만들기
+a = [1, 2, 3]
+b = ['Life', 'is', 'too', 'short']
+c = [1, 2, 'Life', 'is']
