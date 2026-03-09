@@ -389,7 +389,7 @@ print(c)
 # 입력 받은 숫자에 해당되는 범위의 값을 반환
 print(range(5))
 print(list(range(5)))
-print(lsit(range(5, 10)))
+print(list(range(5, 10)))
 print(list(range(5, 10, 2)))
 
 for i in range(5, 20, 3):
@@ -445,7 +445,7 @@ while True:
 
 f.close()
 
-# 파일 모드 'r - readlines()
+# 파일 모드 'r' - readlines()
 f = open('example.txt', 'r')
 lines = f.readlines()
 print(lines)
