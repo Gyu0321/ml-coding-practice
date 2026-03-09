@@ -73,19 +73,19 @@ print(d.strip())
 a = "Pithon"
 # a[1] = 'y'    # 오류 발생
 
-#문자열 바꾸기
+# 문자열 바꾸기
 a = "Python is difficult."
 print(a.replace("difficult", "funny"))
 print(a)
 
-#문자열 나누기
+# 문자열 나누기
 print(a.split())
 
 b = "a, b, c, d"
 print(b)
 print(b.split(','))
 
-#리스트 만들기
+# 리스트 만들기
 a = [1, 2, 3]
 b = ['Life', 'is', 'too', 'short']
 c = [1, 2, 'Life', 'is']
@@ -102,7 +102,7 @@ print(d[0:3])
 # 리스트 연결
 print(a + b)
 print(b[0] + " hi~ ^^;")
-# print(a[0] + " hi~ ^^;")    #오류 발생
+# print(a[0] + " hi~ ^^;")    # 오류 발생
 
 # 리스트 반복
 print(a * 3)
