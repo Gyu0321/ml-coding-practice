@@ -78,7 +78,7 @@ a = "Python is difficult."
 print(a.replace("difficult", "funny"))
 print(a)
 
-#문자열 나구기
+#문자열 나누기
 print(a.split())
 
 b = "a, b, c, d"
@@ -157,7 +157,7 @@ a = [2, 1, 0, 2, 3, 2, 4, 2]
 print(a.count(2))
 
 # 튜플 만들기
-t1 = {1, }
+t1 = (1, )
 t2 = (1, 2, 3)
 t3 = 1, 2, 3
 t4 = (1, 2, (3, 4), ('Lfie', 'is'))
