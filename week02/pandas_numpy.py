@@ -110,7 +110,7 @@ print(iris.drop('class', axis=1).agg(['sum','mean', 'std']))
 
 
 print(iris['class'].unique())
-print(iris['class'].unnique())
+print(iris['class'].nunique())
 print(iris['class'].value_counts())
 
 # 예제 데이터 생성
@@ -124,7 +124,7 @@ data = {
 df = pd.DataFrame(data)
 print(df.head())
 
-# 나이가 30 이상인 직원의 이름과 금여 반환
+# 나이가 30 이상인 직원의 이름과 급여 반환
 result = df[df['age'] >= 30][['name', 'salary']]
 print(result)
 
@@ -175,7 +175,7 @@ print(pd.DataFrame(sample_np))      # 컬럼명이 0, 1, 2, 3, 4
 
 print(sample_df.columns)            # 기존 프레임워크에서 컬럼명 가져오기
 
-print(pd.DataFrame(sample_np, columns = sample_df.columns))        # 새 프레임워크에 컬럼명 붙이기
+print(pd.DataFrame(sample_np, columns = sample_df.columns))       # 새 프레임워크에 컬럼명 붙이기
 
 print(sample_np)
 print(sample_np[0])
