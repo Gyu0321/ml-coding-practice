@@ -88,7 +88,7 @@ print(winner_df)
 
 print(sample_df.reset_index())
 
-print(sample_df.reset_index(drop=True))         # 기존 인덱스는 제거하기
+print(sample_df.reset_index(drop=True))          # 기존 인덱스는 제거하기
 
 print(sample_df.set_index('var_1'))
 
@@ -106,7 +106,7 @@ print(iris.groupby('class').std())
 
 print(iris.drop('class', axis=1).agg(['sum','mean', 'std']))
 
-# print(iris.agg(['sum','mean', 'std']))     # class 컬럼으로 인해 에러 발생
+# print(iris.agg(['sum','mean', 'std']))    # class 컬럼으로 인해 에러 발생
 
 
 print(iris['class'].unique())
@@ -175,7 +175,7 @@ print(pd.DataFrame(sample_np))      # 컬럼명이 0, 1, 2, 3, 4
 
 print(sample_df.columns)            # 기존 프레임워크에서 컬럼명 가져오기
 
-print(pd.DataFrame(sample_np, columns = sample_df.columns))       # 새 프레임워크에 컬럼명 붙이기
+print(pd.DataFrame(sample_np, columns = sample_df.columns))      # 새 프레임워크에 컬럼명 붙이기
 
 print(sample_np)
 print(sample_np[0])
