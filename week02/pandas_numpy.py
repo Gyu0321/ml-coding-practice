@@ -88,7 +88,7 @@ print(winner_df)
 
 print(sample_df.reset_index())
 
-print(sample_df.reset_index(drop=True))
+print(sample_df.reset_index(drop=True))         # 기존 인덱스는 제거하기
 
 print(sample_df.set_index('var_1'))
 
@@ -106,7 +106,7 @@ print(iris.groupby('class').std())
 
 print(iris.drop('class', axis=1).agg(['sum','mean', 'std']))
 
-# print(iris.agg(['sum','mean', 'std]))     # class 컬럼으로 인해 에러 발생
+# print(iris.agg(['sum','mean', 'std']))     # class 컬럼으로 인해 에러 발생
 
 
 print(iris['class'].unique())
