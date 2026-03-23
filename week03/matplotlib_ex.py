@@ -393,3 +393,12 @@ ax2.set_ylabel('Survived Count', color='deeppink') # 서브플롯 y축에 레이
 ax2.tick_params(axis='y', labelcolor='deeppink')
 ax2.legend(loc='upper right', bbox_to_anchor=(1, 0.9))
 
+plt.suptitle('Survival Analysis by Number of Parents/Children (Parch) on the Titanic')
+plt.tight_layout()
+plt.savefig('Figure16.png')
+plt.close()
+
+# **그래프 저장하기**
+
+# 히스토그램 그리기
+plt.hist(titanic['Age'], )
