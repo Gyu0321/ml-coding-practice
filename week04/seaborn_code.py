@@ -80,4 +80,5 @@ plt.savefig('./week04/Seaborn_Figure05.jpg')
 # jointplot( ) 그리기
 sns.jointplot(data=tips, hue='sex', diag_kind='hist', palette='husl')
 
-plt.
+plt.suptitle('Pairplot with Histograms by Gender', y=1.05)
+plt.savefig('./week004/Seaborn_Figure06.jpg')
