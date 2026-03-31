@@ -7,7 +7,7 @@ import pandas as pd
 import tarfile
 import urllib.request
 
-def lad_housing_data():
+def load_housing_data():
     tarball_path = Path("datasets/housing.tgz")
     if not tarball_path.is_file():
         Path("datasets").mkdir(parents=True, exist_ok=True)
@@ -20,7 +20,7 @@ def lad_housing_data():
 housing = load_housing_data()
 
 # 테스트 세트 만들기
-from sklearn.model_selection import tratin_test_split
+from sklearn.model_selection import train_test_split
 
 housing["income_cat"] = pd.cut(housing["median_income"],
                                bins=[0., 1.5, 3.0, 4.5, 6., np.inf],
@@ -64,4 +64,30 @@ X = imputer.transform(housing_num)
 
 imputer.feature_names_in_
 
-housing_tr = pd.DataFrame(X, columns=housing_)
+housing_tr = pd.DataFrame(X, columns=housing_num.columns,
+                          index=housing_num.index)
+housing_tr.loc[null_rows_idx].head()
+
+# 이상치 삭제
+from sklearn.ensemble import IsolationForest
+
+isolation_forest = IsolationForest(random_state=42)
+outlier_pred = isolation_forest.fit_predict(X)
+
+outlier_pred
+
+housing = housing.iloc[outlier_pred == 1]
+housing_labels = housing_labels.iloc[outlier_pred == 1]
+
+# 텍스트와 범주형 특성 다루기
+housing_cat = housing[["ocean_proximity"]]
+housing_cat.head(8)
+
+from sklearn.preprocessing import OrdinalEncoder
+
+ordinal_encoder = OrdinalEncoder()
+housing_cat_encoded = ordinal_encoder.fit_transform(housing_cat)
+
+housing_cat_encoded[:8]
+
+ordinal_encoder.categories_
