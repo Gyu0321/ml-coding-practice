@@ -28,3 +28,11 @@ housing["income_cat"] = pd.cut(housing["median_income"],
 
 strat_train_set, strat_test_set = train_test_split(
     housing, test_size=0.2, stratify=housing["income_cat"], random_state=42)
+
+for set_ in (strat_train_set, strat_test_set):
+    set_.drop("income_cat", axis=1, inplace=True)
+
+"""
+* 원본 훈련 세트로 복원하고 타깃을 분리
+* 'strat_train_set.drop()'은 지정한 열을 제외한 'strat_train
+"""
