@@ -57,4 +57,25 @@ ax2 = fig.add_subplot(1, 2, 2)
 sns.regplot(x='total_bill', y='tip', data=tips, color='blue', scatter_kws={'s': 50, 'alpha': 0.5}, line_kws={'linestyle': '--'}, ax=ax1)
 
 # 산점도에 선형 회귀선 미표시(fit_reg=False)
-sns
+sns.regplot(x='total_bill', y='tip', data=tips, color='blue', scatter_kws={'s': 50, 'alpha': 0.5}, line_kws={'linestyle': '--'}, ax=ax2, fit_reg=False)
+
+fig.suptitle('Scatter Plots with Regression Lines', fontsize=16)
+ax1.set_title('fit_reg = True')
+ax2.set_title('fit_reg = False')
+plt.savefig('./week04/Seaborn_Figure03.jpg')
+
+# **히스토그램과 커널 밀도 추정 그래프**
+# 히스토그램과 커널 밀도 추정 그래프 함께 그리기
+sns.histplot(tips['tip'], bins=30, kde=True, color='skyblue')
+
+plt.title('Histogram with KDE for Tips')
+plt.savefig('./week04/Seaborn_Figure04.jpg')
+
+# **조인트 그래프**
+# jointplot( ) 그리기
+sns.joint(x='size', y='tip', data=tips, kind='scatter')
+plt.savefig('./week04/Seaborn_Figure05.jpg')
+
+# **관계 그래프**
+# jointplot( ) 그리기
+sns.jointplot(x='size', y='tip', data=tips, kind='scatter')
