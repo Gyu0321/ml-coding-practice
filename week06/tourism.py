@@ -19,3 +19,8 @@ def main():
     ed_cd = "E" 		                      # E : 방한외래관광객, D : 해외 출국
 
     jsonResult, result, natName, dataEND = getTourismStatsService(nat_cd, ed_cd, nStartYear, nEndYear)  #[CODE 3]
+
+    #파일저장 : csv 파일
+    columns = ["입국자국가", "국가코드", "입국연월", "입국자 수"]
+    result_df = pd.DataFrame(result, columns = columns)
+    result_df.to_csv('./%s_%s_%d_%s.svc' % {natName, ed_cd, nStartYear, dataEND})
