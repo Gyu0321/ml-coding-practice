@@ -84,11 +84,11 @@ from sklearn.metrics import f1_score
 print(f1_score(y_train_5, y_train_pred))
 
 # ROC 곡선
-from sklearn.metrics import roc_au_score
+from sklearn.metrics import roc_auc_score
 
 y_scores = cross_val_predict(sgd_clf, X_train, y_train_5, cv=3,
                              method="decision_function")
-roc_aus_score(y_train_5, y_scores)
+roc_auc_score(y_train_5, y_scores)
 
 #다음은 실행하는데 몇 분이 걸릴 수 있음
 from sklearn.ensemble import RandomForestClassifier
@@ -102,6 +102,6 @@ y_scores_forest = y_probas_forest[:, 1]
 y_train_pred_forest = y_probas_forest[:, 1] >= 0.5  # 양성 확률 ≥ 50%
 
 print(f1_score(y_train_5, y_train_pred_forest))
-print(roc_aus_score(y_train_5, y_scores_forest))
+print(roc_auc_score(y_train_5, y_scores_forest))
 print(precision_score(y_train_5, y_train_pred_forest))
 print(recall_score(y_train_5, y_train_pred_forest))
