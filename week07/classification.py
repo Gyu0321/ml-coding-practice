@@ -36,4 +36,28 @@ plt.show()
 X_train, X_test, y_train, y_test = X[:60000], X[60000:], y[:6000], y[6000:]
 
 # 이진 분류기 훈련
-y_train_5 = (y_train == '5')
+y_train_5 = (y_train == '5')  # 5는 True고, 다른 숫자는 모두 False
+y_test_5 = (y_test == '5')
+
+from sklearn.linear_model import SGDClassifier
+
+sgd_clf = SGDClassifier(random_state=42)
+sgd_clf.fit(X_train, y_train_5)
+
+sgd_clf.predict([some_digit])
+
+# 성능 측정 - 교차 검증을 사용한 정확도 측정
+from sklearn.model_selection import cross_val_score
+
+cross_val_score(sgd_clf, X_train, y_train_5, cv=3, scoring="accuracy")
+
+from sklearn.dummy import DummyClassifier
+
+dummy_clf = DummyClassifier()
+dummy_clf.fit(X_train, y_train_5)
+print(any(dummy_clf.predict(X_train)))
+
+print(cross_val_score(dummy_clf, X_train, y_train_5, cv=3, scoring="accuracy"))
+
+# 오차 행렬
+frome sklearn.model
