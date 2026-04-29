@@ -77,14 +77,14 @@ from sklearn.metrics import precision_score, recall_score
 
 print(precision_score(y_train_5, y_train_pred))  # == 3530 / (687 + 3530)
 
-print(recall_score(y_train_5, y_train_pred))  # == 3530 / (1891  + 3530)
+print(recall_score(y_train_5, y_train_pred))  # == 3530 / (1891 + 3530)
 
 from sklearn.metrics import f1_score
 
 print(f1_score(y_train_5, y_train_pred))
 
 # ROC 곡선
-from sklearn.metrics import roc_aus_score
+from sklearn.metrics import roc_au_score
 
 y_scores = cross_val_predict(sgd_clf, X_train, y_train_5, cv=3,
                              method="decision_function")
