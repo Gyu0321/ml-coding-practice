@@ -110,3 +110,10 @@ plt.pie(type_counts, labels=type_counts.index, autopct='%0.f%%', startangle=100,
 plt.suptitle('Movie & TV Show distribution', fontfamily='serif', fontsize=15, fontweight='bold')
 plt.title('We see more movies than TV shows on Netflix.', fontfamily='serif', fontsize=12)
 plt.show()
+
+netflix.head(3)
+
+# 넷플릭스 데이터셋의 장르별 등장 횟수 계산
+genres = netflix['listed_in'].str.split(', ', expand=True).stack().value_counts()
+genres
+
